@@ -1,5 +1,5 @@
 function redirectTo(route) {
-    window.location.href = `http://localhost:3000${route}`;
+    window.location.href = route;
 }
 
 document.querySelectorAll('.desenvolvimento').forEach(function (element) {
