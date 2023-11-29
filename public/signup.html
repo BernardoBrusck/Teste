@@ -39,8 +39,24 @@
 
             let nome = document.querySelector('.nome').value;
             let email = document.querySelector('.email').value;
-            let senha = document.querySelector('.senha').value;
             let cargo = document.querySelector('.cargo').value;
+            let senha = document.querySelector('.senha').value;
+            let confirmaSenha = document.querySelector('.confirma_senha').value;
+
+            if (senha.length < 6) {
+                alert('A senha deve ter pelo menos 6 caracteres.');
+                return;
+            }
+
+            if (/\s/.test(senha)) {
+                alert('A senha não deve conter espaços.');
+                return;
+            }
+
+            if (senha !== confirmaSenha) {
+                alert('A senha e a confirmação de senha devem ser iguais.');
+                return;
+            }
 
             fetch('/cadastrar', {
                 method: 'POST',

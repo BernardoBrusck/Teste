@@ -10,19 +10,21 @@
     <script src='main.js'></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,600;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,600;1,800&display=swap"
+        rel="stylesheet">
     <link rel="icon" href="IMG/EA.svg">
 </head>
 
 <body>
     <header>
         <div class="logo">
-            <img src="img/elite athletics.svg">
+            <img src="IMG/elite athletics.png">
         </div>
         <div class="menu_bar">
             <button class="menu_btt inicio" onclick="redirectTo('/')">INICIO</button>
             <button class="menu_btt atletas" onclick="redirectTo('/atletas')">ATLETAS</button>
-            <button class="menu_btt tecnicos" onclick="redirectTo('/tecnicos')" style="background: #151f54; color: #fff;">TÉCNICOS</button>
+            <button class="menu_btt tecnicos" onclick="redirectTo('/tecnicos')"
+                style="background: #151f54; color: #fff;">TÉCNICOS</button>
             <button class="menu_btt esportes" onclick="redirectTo('/esportes')">ESPORTES</button>
             <button class="menu_btt times" onclick="redirectTo('/times')">TIMES</button>
             <button class="menu_btt sair" onclick="logout()">SAIR</button>
@@ -83,6 +85,38 @@
             </div>
         </div>
     </main>
+    <script>
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        const slider = document.querySelector('.imagens');
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.classList.add('active');
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 3; //scroll-fast
+            slider.scrollLeft = scrollLeft - walk;
+        });
+    </script>
     <script src='main.js'></script>
 </body>
 

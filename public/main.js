@@ -25,3 +25,7 @@ function logout() {
     // Redirecionar para a página de login
     window.location.href = '/sign-in';
 }
+
+const username = document.querySelector(".user-name")
+
+username.innerHTML = usuarioNome;
