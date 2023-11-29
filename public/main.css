@@ -1,0 +1,261 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    user-select: none;
+    outline: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+header img {
+    padding: 20px 0;
+}
+
+.menu_bar {
+    width: 50%;
+    display: flex;
+    gap: 20px;
+}
+
+.menu_btt {
+    width: 100%;
+    background: none;
+    color: #151f54;
+    border: none;
+    padding: 15px 0;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    outline: none;
+    border-radius: 5px;
+    font-weight: bold;
+    background: transparent;
+}
+
+.menu_btt:hover,
+.menu_btt:focus {
+    background: #151f54;
+    color: #fff;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, #151f54, #303f93);
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.welcome {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 10px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.mensagem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bem-vindo {
+    font-size: 50px;
+    color: #151f54;
+}
+
+.user-name {
+    color: #151f54;
+    font-style: italic;
+    font-size: 40px;
+}
+
+.perfil-user {
+    padding: 30px;
+    border-radius: 120px;
+    border: none;
+    background: #dbdbdb;
+}
+
+.começar {
+    background: #f8a92a;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 100px;
+    border: none;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.começar:hover,
+.começar:focus {
+    background: #f06c00
+}
+
+.imagens {
+    background: #030925;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    overflow-x: auto;
+}
+
+.foto-user {
+    min-width: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.foto-user:nth-child(1) {
+    background-image: linear-gradient(#151f54, #000000);
+}
+
+.foto-user:nth-child(2) {
+    background-image: linear-gradient(#f82a57, #000000);
+}
+
+.perfil-top {
+    width: 100%;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.perfil-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.descricao-user {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.descricao-user h1 {
+    margin-bottom: 20px;
+}
+
+.add-mensagem {
+    background: #646464;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.add-mensagem:hover {
+    background: #082c0b;
+}
+
+ul {
+    margin-left: 20px;
+}
+
+.lista-esportes {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: #000000;
+    overflow: hidden;
+}
+
+.handebol,
+.futvolei {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    font-size: 60px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s, filter 0.3s;
+    /* Adicionei "transform" e "filter" à transição */
+    overflow: hidden;
+    /* Para garantir que a imagem não ultrapasse os limites do contêiner */
+}
+
+.handebol:hover,
+.futvolei:hover {
+    transform: scale(1.05);
+}
+
+.handebol img,
+.futvolei img {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(5px) brightness(0.7);
+    transition: filter 0.3s;
+    background-size: cover;
+    background-position: center;
+    /* Adicionei "filter" à transição */
+}
+
+.handebol:hover img,
+.futvolei:hover img {
+    filter: blur(0px) brightness(1);
+}
+
+.handebol p,
+.futvolei p {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Adicionei uma transição para o texto */
+    transition: all 0.3s;
+}
+
+.handebol:hover p,
+.futvolei:hover p {
+    transform: translate(-50%, -50%) scale(1.05);
+    text-shadow: 0px 0 20px #ffffffeb;
+    /* Adicionei escala ao texto no hover */
+}
